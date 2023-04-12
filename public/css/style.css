@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Consolas;
+}
+
+body {
+    display: grid;
+    grid-template-areas: "nav "
+                         "section "
+                         "footer ";
+    grid-template-columns: 1fr ;
+    grid-template-rows:  1fr 12fr 2fr ;
+    background-color: rgb(18, 20, 18);
+    grid-gap: 0.2rem;
+    height: 100vh;  
+}
+    
+nav  {
+    grid-area: nav;
+    background-color: rgb(149, 45, 247);
+}
+section  {
+    grid-area: section;
+    justify-self: center;
+    align-items: center;
+}
+footer  {
+    grid-area: footer;
+    background-color: rgb(42, 41, 46);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%) ;
+    width: 50vmin;
+    height: 60vmin; 
+    background-color: rgb(28, 29, 28);
+    border-radius: 15%;
+}
+
+#logo {
+    width: 30vmin;
+    height: 30vmin;
+    border-radius:  50%;
+}
+
+#headertxt {
+    color: #2bff60;
+    margin: 1vmax;
+    margin-top: 5vmax;
+    font-size: 2vmax;
+}
+
+#lv1-link{
+    display: grid;
+    place-items: center;
+    background-color:#2bff60;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 50vmax;  
+    text-decoration: none;
+    color: rgb(42, 41, 46);
+    position: relative;
+}
+
+#lv1-link::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 50vmax;
+    box-shadow: 0 0 0 rgb(187, 114, 255);
+    z-index: 1;
+}
+
+#lv1-link:hover{
+    animation: aura 3s infinite;
+}
+
+@keyframes aura {
+    0%{
+        box-shadow: 0.3vmax 0.3vmax 1.7vmax rgb(187, 114, 255);
+    }
+
+    25%{
+        box-shadow: 0.3vmax 0.3vmax 1.7vmax rgb(114, 180, 255);
+    }
+
+    50%{
+        box-shadow: 0.3vmax 0.3vmax 1.7vmax rgb(114, 250, 255);
+    }
+
+    75%{
+        box-shadow: 0.3vmax 0.3vmax 1.7vmax rgb(114, 180, 255);
+    }
+
+    100%{
+        box-shadow: 0.3vmax 0.3vmax 1.7vmax rgb(187, 114, 255);
+    }
+}
+
