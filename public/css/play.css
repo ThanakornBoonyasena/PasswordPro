@@ -83,7 +83,7 @@ li:hover{
     background-color: #12503b;
 }
 
-#Beginer{
+#Beginner{
     color: #83fa33;
     background-color: #2b5012;
 }
@@ -153,8 +153,8 @@ a {
     border: 0.3rem solid #33fab8;
     background-color: transparent;
     border-bottom: transparent;
-    width: 15vw;
-    height: 5vh;
+    width: 20vw;
+    height: 1vh;
 }
 @keyframes aura {
     0%{
