@@ -9,26 +9,33 @@
 </head>
 <body>
   <nav>
-    <p>Nothing to put :p</p>
-  </nav>
-
+  </nav>  
   <section>
-    <div class="content">
-      <h1 id="headertxt">PasswordPro</h1>
-      <img id="logo" src="/images/IMG_20230406_221422.jpg" alt="Logo cant be load." ><br>
-      <a href="#" id="lv1-link"><strong>Let's start</strong></a>
+    <a href="/news" target="_self">
+    <div id="news">
+      <h1 class="headertxt">ภัยจากการถูกแฮก</h1>
+      <p class="article">ภัยจากการถูกแฮกข้อมูลมันน่ากลัวบราๆๆๆ</p>
     </div>
+    </a>
+
+    <a href="/about">
+    <div id="passwordpro">
+      <h1 class="headertxt">PasswordPro คืออะไร</h1>
+      <p class="article">PasswordPro คือ web app ที่จะช่วยบราๆๆๆ</p>
+      <img id="logo" src="/images/IMG_20230406_221422.jpg" alt="Logo cant be load." ><br>
+    </div>
+    </a>
+
+    <a href="/play">
+    <div id="play">
+      <h1 class="headertxt">ฝึกฝนการตั้งรหัสผ่าน</h1>
+      <p class="article">สามารถกดที่นี่เพื่อนฝึกการตั้งรหัสบราๆๆๆ</p>
+    </div>
+    </a>
+
   </section>
-
-
   <footer>
     <p>Nothing to put :p</p>
   </footer>
 </body>
-<script>
-  const url = location.href;
-  const urltolv1 = url + "lv1";
-  const lv1Link = document.getElementById("lv1-link");
-  lv1Link.href = urltolv1;
-</script>
 </html>
