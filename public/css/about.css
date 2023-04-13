@@ -57,13 +57,3 @@ footer  {
     font-size: 1.5rem;
 }
 
-
-#logo {
-    width: 30vmin;
-    height: 30vmin;
-    border-radius:  50%;
-}
-
-a {
-    text-decoration: none;
-}

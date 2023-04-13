@@ -32,7 +32,7 @@ footer  {
     background-color: #4820d8;
 }
 
-#rank {
+.content {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -107,7 +107,55 @@ a {
     text-decoration: none;
 }
 
+.content input[type="number"] {
+    margin-top: 1vmax;
+    width: 2vw;
+    height: 3vh;
+    text-align: center;
+}
 
+.content input::-webkit-outer-spin-button,
+.content input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#btn1 {
+    border: none;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 2rem;
+    background-color:#2bff60;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 50vmax;  
+    text-decoration: none;
+    color: rgb(42, 41, 46);
+    font-weight: bold;
+}
+
+#newbieh1 {
+    position: relative;
+    top: 0; 
+    color: #33fab8;
+    margin: 2rem;
+    font-size: 3.5rem;
+}
+
+.newbiep {
+    color: #fff;
+    margin: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.suggest {
+    border: 0.3rem solid #33fab8;
+    background-color: transparent;
+    border-bottom: transparent;
+    width: 15vw;
+    height: 5vh;
+}
 @keyframes aura {
     0%{
         box-shadow: 0.3vmax 0.3vmax 1.7vmax rgb(255, 255, 255);

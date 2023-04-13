@@ -32,7 +32,7 @@ footer  {
     background-color: #4820d8;
 }
 
-#news,#passwordpro,#play {
+.content {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -43,27 +43,3 @@ footer  {
     margin: 3rem;
 }
 
-
-.headertxt {
-    color: #12ff49;
-    margin: 1vmax;
-    margin-top: 5vmax;
-    font-size: 2vmax;
-}
-
-.article {
-    color: #ffff;
-    margin: 1rem;
-    font-size: 1.5rem;
-}
-
-
-#logo {
-    width: 30vmin;
-    height: 30vmin;
-    border-radius:  50%;
-}
-
-a {
-    text-decoration: none;
-}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/play.css">
     <title>Hacker Pro >:D</title>
 </head>
 <body>
@@ -12,10 +12,34 @@
     <p>Nothing to put :p</p>
   </nav>
   <section>
+    <div class="content">
+      <h1 id="newbieh1">Newbie</h1>
+      <p class="newbiep">ระดับ Newbie รหัสทุกตัวจะเป็นตัวเลข โดยตัวเลขจะซ้ำกันหรือไม่ซ้ำกันก็ได้</p>
+      <p class="newbiep">ลองตั้งดูสิ</p>
+      <div class="suggest"></div>
 
+      <form action="/newbie-send" method="post">
+        <input type="number" id="char1" name="char1" tabindex="1" maxlength="1"  onkeyup="moveToNext(this, 'char2')" required>
+        <input type="number" id="char2" name="char2" tabindex="2" maxlength="1"  onkeyup="moveToNext(this, 'char3')" required>
+        <input type="number" id="char3" name="char3" tabindex="3" maxlength="1"  onkeyup="moveToNext(this, 'char4')" required>
+        <input type="number" id="char4" name="char4" tabindex="4" maxlength="1"  onkeyup="moveToNext(this, 'char5')" required>
+        <input type="number" id="char5" name="char5" tabindex="5" maxlength="1"  onkeyup="moveToNext(this, 'char6')" required>
+        <input type="number" id="char6" name="char6" tabindex="6" maxlength="1"  required>        
+        <br>
+        <button id="btn1" type="submit">ตรวจสอบ แล้วไปต่อ</button>
+      </form>
+      <p class="newbiep"><%= status %></p>
+    </div>
   </section>
   <footer>
     <p>Nothing to put :p</p>
   </footer>
 </body>
+<script>
+  function moveToNext(input, nextInputId) {
+  if (input.value.length == input.maxLength) {
+    document.getElementById(nextInputId).focus();
+  }
+}
+</script>
 </html>
