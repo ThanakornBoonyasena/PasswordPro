@@ -11,22 +11,18 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
+app.use('/play', ranks);
+app.use('/cri', cri);
+
 app.get('/', (req, res) => {
     res.render('index');
   });
-
-app.use('/play', ranks);
-
-app.use('/cri', cri);
-
 app.get('/news', (req, res) => {
     res.render('news');
   });
-
 app.get('/about', (req, res) => {
     res.render('about');
   });
-
 app.get('/play', (req, res) => {
     res.render('play');
   });
