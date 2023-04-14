@@ -13,7 +13,8 @@ app.get('/newbie', (req, res) => {
   });
 
   app.get('/beginner', (req, res) => {
-    res.render('beginner');
+    const status = ""
+    res.render('beginner',{status:status});
   });
 
   app.get('/amateur', (req, res) => {

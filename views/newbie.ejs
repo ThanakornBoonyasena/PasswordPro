@@ -14,9 +14,9 @@
   <section>
     <div class="content">
       <h1 id="newbieh1">Newbie</h1>
-      <p class="newbiep">ระดับ Newbie รหัสทุกตัวจะเป็นตัวเลข โดยตัวเลขจะซ้ำกันหรือไม่ซ้ำกันก็ได้</p>
-      <p class="newbiep">ลองตั้งดูสิ</p>
-      <div class="suggest"></div>
+      <p class="article">ระดับ Newbie รหัสทุกตัวจะเป็นตัวเลข โดยตัวเลขจะซ้ำกันหรือไม่ซ้ำกันก็ได้ แต่ก็ไม่ควรตั้งเป็นวันเกิดหรือวันสำคัญนะ</p>
+      <p class="article">ลองตั้งดูสิ</p>
+      <div id="suggest1"></div>
 
       <form action="/cri" method="post">
         <input type="number" id="char1" name="char1" tabindex="1" maxlength="1"  onkeyup="moveToNext(this, 'char2')" required>
@@ -30,7 +30,7 @@
         <br>
         <button id="btn1" type="submit">ตรวจสอบ แล้วไปต่อ</button>
       </form>
-      <p class="newbiep"><%= status %></p>
+      <p class="article"><%= status %></p>
     </div>  
   </section>
   <footer>

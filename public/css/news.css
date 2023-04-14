@@ -43,3 +43,29 @@ footer  {
     margin: 3rem;
 }
 
+.ptxt{
+    color: #ffff;
+    margin: 1rem;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.headertxt {
+    color: #12ff49;
+    margin: 1vmax;
+    margin-top: 1.5vmax;
+    font-size: 2vmax;
+}
+
+.newslink {
+    color: #ffff;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.newsimg {
+    position: relative;
+    width: 70%;
+    height: 25%;
+    border-radius: 1rem;
+}   

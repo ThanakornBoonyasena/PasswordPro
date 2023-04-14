@@ -5,7 +5,8 @@ router.post('/',(req,res) => {
     const password = req.body;
     const passwordlist = Object.values(password);
     console.log("The data is " + passwordlist)
-    res.redirect('/play/beginner')
+    console.log(typeof passwordlist[0]);
+    res.redirect('/play/beginner');
 });
 
 module.exports = router;
