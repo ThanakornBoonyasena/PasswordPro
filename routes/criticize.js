@@ -105,7 +105,7 @@ router.post('/:rank',(req,res) => {
     let status = true;
 
     if (rank == "newbie") {
-        [num] = intcheck(passwordsend,num,true);
+        num = intcheck(passwordsend,num,true);
         if (num == false) {
             notification = "กรุณาใส่เฉพาะตัวเลขใน Rank Newbie"
             status = false;             
