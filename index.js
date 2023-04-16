@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 app.use('/play', ranks);
+
 app.use('/cri', cri);
 
 app.get('/', (req, res) => {
@@ -26,6 +27,5 @@ app.get('/about', (req, res) => {
 app.get('/play', (req, res) => {
     res.render('play');
   });
-
 
 app.listen(8080 ,() => console.log("Server is running"))

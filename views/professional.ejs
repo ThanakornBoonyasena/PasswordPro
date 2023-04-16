@@ -13,10 +13,39 @@
   </nav>
   <section>
     <div class="content">
-    </div>
+      <h1 id="professional">Professional</h1>
+      <p class="article">ระดับ Professional รหัสจะถูกแบ่งเป็นตัวจะตัวอักษรพิมพ์เล็ก ตัวอักษรพิมพ์ใหญ่ ตัวเลข และสัญลักษณ์ต่างๆ เช่น ! @ # โดยตัวอักษร และตัวเลขจะซ้ำกันหรือไม่ซ้ำกันก็ได้ แต่ก็ไม่ควรเป็นชื่อ นามสกุล หรือวันสำคัญนะ</p>
+      <p class="article">ลองตั้งดูสิ</p>
+      <div class="suggest">
+        <div id="suggest1-1-1"></div>
+        <div id="suggest2-1-1-1"></div>
+        <div id="suggest3-1-1"></div>
+        <div id="suggest4"></div>
+      </div>
+      <form action="/cri/professional" method="post">
+        <input type="text" id="char1" name="password[1]" tabindex="1" maxlength="1"  onkeyup="moveToNext(this, 'char2')" required>
+        <input type="text" id="char2" name="password[2]" tabindex="2" maxlength="1"  onkeyup="moveToNext(this, 'char3')" required>
+        <input type="text" id="char3" name="password[3]" tabindex="3" maxlength="1"  onkeyup="moveToNext(this, 'char4')" required>
+        <input type="text" id="char4" name="password[4]" tabindex="4" maxlength="1"  onkeyup="moveToNext(this, 'char5')" required>
+        <input type="text" id="char5" name="password[5]" tabindex="5" maxlength="1"  onkeyup="moveToNext(this, 'char6')" required>
+        <input type="text" id="char6" name="password[6]" tabindex="6" maxlength="1"  onkeyup="moveToNext(this, 'char7')"required>
+        <input type="text" id="char7" name="password[7]" tabindex="7" maxlength="1"  onkeyup="moveToNext(this, 'char8')"required> 
+        <input type="text" id="char8" name="password[8]" tabindex="8" maxlength="1"required>     
+        <br>
+        <button id="btn1" type="submit">ตรวจสอบ แล้วไปต่อ</button>
+      </form>
+      <p id="notification"><%= notification %></p>
+    </div>  
   </section>
   <footer>
     <p>Nothing to put :p</p>
   </footer>
 </body>
+<script>
+  function moveToNext(input, nextInputId) {
+  if (input.value.length == input.maxLength) {
+    document.getElementById(nextInputId).focus();
+  }
+}
+</script>
 </html>

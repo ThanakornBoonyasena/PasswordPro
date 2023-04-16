@@ -17,19 +17,19 @@
       <p class="article">ระดับ Beginner รหัสทุกตัวจะตัวอักษรพิมพ์เล็ก โดยตัวอักษรจะซ้ำกันหรือไม่ซ้ำกันก็ได้ แต่ก็ไม่ควรเป็นชื่อหรือนามสกุลนะ</p>
       <p class="article">ลองตั้งดูสิ</p>
       <div id="suggest2"></div>
-      <form action="/cri" method="post">
-        <input type="number" id="char1" name="char1" tabindex="1" maxlength="1"  onkeyup="moveToNext(this, 'char2')" required>
-        <input type="number" id="char2" name="char2" tabindex="2" maxlength="1"  onkeyup="moveToNext(this, 'char3')" required>
-        <input type="number" id="char3" name="char3" tabindex="3" maxlength="1"  onkeyup="moveToNext(this, 'char4')" required>
-        <input type="number" id="char4" name="char4" tabindex="4" maxlength="1"  onkeyup="moveToNext(this, 'char5')" required>
-        <input type="number" id="char5" name="char5" tabindex="5" maxlength="1"  onkeyup="moveToNext(this, 'char6')" required>
-        <input type="number" id="char6" name="char6" tabindex="6" maxlength="1"  onkeyup="moveToNext(this, 'char7')"required>
-        <input type="number" id="char7" name="char7" tabindex="7" maxlength="1"  onkeyup="moveToNext(this, 'char8')"required> 
-        <input type="number" id="char8" name="char8" tabindex="8" maxlength="1"required>     
+      <form action="/cri/beginner" method="post">
+        <input type="text" id="char1" name="password[1]" tabindex="1" maxlength="1"  onkeyup="moveToNext(this, 'char2')" required>
+        <input type="text" id="char2" name="password[2]" tabindex="2" maxlength="1"  onkeyup="moveToNext(this, 'char3')" required>
+        <input type="text" id="char3" name="password[3]" tabindex="3" maxlength="1"  onkeyup="moveToNext(this, 'char4')" required>
+        <input type="text" id="char4" name="password[4]" tabindex="4" maxlength="1"  onkeyup="moveToNext(this, 'char5')" required>
+        <input type="text" id="char5" name="password[5]" tabindex="5" maxlength="1"  onkeyup="moveToNext(this, 'char6')" required>
+        <input type="text" id="char6" name="password[6]" tabindex="6" maxlength="1"  onkeyup="moveToNext(this, 'char7')" required>
+        <input type="text" id="char7" name="password[7]" tabindex="7" maxlength="1"  onkeyup="moveToNext(this, 'char8')" required> 
+        <input type="text" id="char8" name="password[8]" tabindex="8" maxlength="1"required>     
         <br>
         <button id="btn1" type="submit">ตรวจสอบ แล้วไปต่อ</button>
       </form>
-      <p class="article"><%= status %></p>
+      <p class="notification"><%= notification %></p>
     </div>  
   </section>
   <footer>

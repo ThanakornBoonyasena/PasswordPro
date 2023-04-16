@@ -7,26 +7,29 @@ app.use(express.static(__dirname + '../public'));
 app.set('view engine', 'ejs');
 
 
-app.get('/newbie', (req, res) => {
-    const status = ""
-    res.render('newbie',{status:status});
+  app.get('/newbie/:notification?', (req, res) => {
+    const notification = req.params.notification;
+    res.render('newbie',{notification : notification});
   });
 
-  app.get('/beginner', (req, res) => {
-    const status = ""
-    res.render('beginner',{status:status});
+  app.get('/beginner/:notification?', (req, res) => {
+    const notification = req.params.notification;
+    res.render('beginner',{notification : notification});
   });
 
-  app.get('/amateur', (req, res) => {
-    res.render('amateur');
+  app.get('/amateur/:notification?', (req, res) => {
+        const notification = req.params.notification;
+    res.render('amateur',{notification : notification});
   });
 
-  app.get('/semi-pro', (req, res) => {
-    res.render('semi-pro');
+  app.get('/semi-pro/:notification?', (req, res) => {
+        const notification = req.params.notification;
+    res.render('semi-pro',{notification : notification});
   });
 
-  app.get('/professional', (req, res) => {
-    res.render('professional');
+  app.get('/professional/:notification?', (req, res) => {
+        const notification = req.params.notification;
+    res.render('professional',{notification : notification});
   });
 
   module.exports = app;
