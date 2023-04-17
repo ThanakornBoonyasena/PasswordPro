@@ -234,13 +234,6 @@ a {
     text-align: center;
 }
 
-#notification {
-    color: #15ff00;
-    margin: 0.5rem;
-    font-size: 2.5rem;
-    text-align: center;
-}
-
 @keyframes aura {
     0%{
         box-shadow: 0.3vmax 0.3vmax 1.7vmax rgb(255, 255, 255);

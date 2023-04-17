@@ -90,16 +90,17 @@ function uppercasecheck(passwordsend, upper, stop) {
 }
 
 function symbolcheck(passwordsend,sym) {
-    const symbolPattern = /[^\w\s]/;
-    for (let i = 0; i < 8; i++) {
-        if (symbolPattern.test(passwordsend)) {
+    const symbolRegex = new RegExp(
+        '^(?=.*[!@#$%^&*"\\[\\]\\{\\}<>/\\(\\)=\\\\\\-_´+`~\\:;,\\.€\\|])',);
+    for (let i = 0; i < 8 ; i++) {
+        if (symbolRegex.test(passwordsend[i])) {
             sym = true;
-            break
+            break;
         } else {
-            sym = false;
-        }
-    }
-    return sym;
+            sym =  false;
+       }
+      }
+      return sym;
 }
 
 router.post('/:rank',(req,res) => {
@@ -172,42 +173,84 @@ router.post('/:rank',(req,res) => {
             notification = "กรุณาใส่ทั้งตัวอักษร และตัวเลขใน Rank semi-pro"
             status = false;
         } 
-            if (lower == false && upper == false && num == false) {
-                notification = "กรุณาใส่ตัวอักษรพิมพ์เล็ก พิมพ์ใหญ่ และตัวเลขใน Rank semi-pro";
-                status = false;             
-            } 
-            if (lower == true && upper == false && num == false) {
-                notification = "กรุณาใส่ตัวอักษรพิมพ์ใหญ่ และตัวเลขใน Rank semi-pro";
-                status = false;             
-            }
-            if (lower == true && upper == true && num == false) {
-                notification = "กรุณาใส่ตัวเลขใน Rank semi-pro";
-                status = false;             
-            }
-            if (lower == false && upper == true && num == true) {
-                notification = "กรุณาใส่ตัวอักษรพิมพ์เล็กใน Rank semi-pro";
-                status = false;             
-            }
-            if (lower == true && upper == false && num == true) {
-                notification = "กรุณาใส่ตัวอักษรพิมพ์ใหญ่ใน Rank semi-pro";
-                status = false;             
-            }
-            if (lower == false && upper == false && num == true) {
-                notification = "กรุณาใส่ตัวอักษรใน Rank semi-pro";
-                status = false;             
-            }
-            if (lower  == true && upper  == true && num  == true ) {
-                status = true;
-            }
+        if (lower == false && upper == false && num == false) {
+            notification = "กรุณาใส่ตัวอักษรพิมพ์เล็ก พิมพ์ใหญ่ และตัวเลขใน Rank semi-pro";
+            status = false;             
+        } 
+        if (lower == true && upper == false && num == false) {
+            notification = "กรุณาใส่ตัวอักษรพิมพ์ใหญ่ และตัวเลขใน Rank semi-pro";
+            status = false;             
+        }
+        if (lower == true && upper == true && num == false) {
+            notification = "กรุณาใส่ตัวเลขใน Rank semi-pro";
+            status = false;             
+        }
+        if (lower == false && upper == true && num == true) {
+            notification = "กรุณาใส่ตัวอักษรพิมพ์เล็กใน Rank semi-pro";
+            status = false;             
+        }
+        if (lower == true && upper == false && num == true) {
+            notification = "กรุณาใส่ตัวอักษรพิมพ์ใหญ่ใน Rank semi-pro";
+            status = false;             
+        }
+        if (lower == false && upper == false && num == true) {
+            notification = "กรุณาใส่ตัวอักษรใน Rank semi-pro";
+            status = false;             
+        }
+        if (lower  == true && upper  == true && num  == true ) {
+            status = true;
+        }
     }
 
     if (rank == "professional") {
+        num = intcheck(passwordsend,num,false);
+        upper = uppercasecheck(passwordsend, upper,false)
+        lower = lowercasecheck(passwordsend, lower,false);
         sym = symbolcheck(passwordsend,sym);
-        if (sym) {
+        if (num && upper && lower && sym) {
             status = true;
-        } else {
-            status = false;
-            notification ="กรุณาใส่สัญญาลักษณ์ใน RanK Professional"
+        } else if (!num && !upper && !lower) {
+            status = true;
+            notification = "กรุณาใส่ตัวเลข ตัวอักษรพิมพ์ใหญ่ และตัวอักษรพิมพ์เล็ก Rank Professional"
+        }else if (!sym && !upper && !lower) {
+            status = true;
+            notification = "กรุณาใส่สัญญาลักษณ์ ตัวอักษรพิมพ์ใหญ่ และตัวอักษรพิมพ์เล็ก Rank Professional"
+        }else if (!num && !sym && !lower) {
+            status = true;
+            notification = "กรุณาใส่ตัวเลข สัญญาลักษณ์ และตัวอักษรพิมพ์เล็ก Rank Professional"
+        }else if (!num && !upper && !sym) {
+            status = true;
+            notification = "กรุณาใส่ตัวเลข สัญญาลักษณ์ และตัวอักษรพิมพ์ใหญ่ Rank Professional"
+        }else if (!num && !lower) {
+            status = true;
+            notification = "กรุณาใส่สัญญาลักษณ์ และตัวอักษรพิมพ์เล็ก Rank Professional"
+        } else if (!num && !upper) {
+            status = true;
+            notification = "กรุณาใส่สัญญาลักษณ์ และตัวอักษรพิมพ์ใหญ่ Rank Professional"
+        } else if (!num && !sym) {
+            status = true;
+            notification = "กรุณาใส่สัญญาลักษณ์ และตัวเลข Rank Professional"
+        } else if (!lower && !upper) {
+            status = true;
+            notification = "กรุณาใส่ตัวอักษรพิมพ์ใหญ่ และตัวอักษรพิมพ์เล็ก Rank Professional"
+        } else if (!lower && !sym) {
+            status = true;
+            notification = "กรุณาใส่สัญญาลักษณ์ และตัวอักษรพิมพ์เล็ก Rank Professional"
+        } else if (!upper && !sym) {
+            status = true;
+            notification = "กรุณาใส่ตัวอักษรพิมพ์ใหญ่ และสัญญาลักษณ์ใน Rank Professional"
+        } else if (!num) {
+            status = true;
+            notification = "กรุณาใส่ตัวเลข ใน Rank Professional"
+        } else if (!upper) {
+            status = true;
+            notification = "กรุณาใส่ตัวอักษรพิมพ์ใหญ่ ใน Rank Professional"
+        } else if (!lower) {
+            status = true;
+            notification = "กรุณาใส่ตัวอักษรพิมพ์เล็ก ใน Rank Professional"
+        } else if (!sym) {
+            status = true;
+            notification = "กรุณาใส่สัญญาลักษณ์ ใน Rank Professional"
         }
     }
 
