@@ -37,6 +37,8 @@ function intcheck(passwordsend,num,stop) {
 
 
 function lowercasecheck(passwordsend, lower, stop) {
+    const symbolRegex = new RegExp(
+        '^(?=.*[!@#$%^&*"\\[\\]\\{\\}<>/\\(\\)=\\\\\\-_´+`~\\:;,\\.€\\|])',)
     if (stop){
         for (let i = 0; i < 8; i++) {
             if (passwordsend[i] === passwordsend[i].toUpperCase()) {
@@ -48,7 +50,7 @@ function lowercasecheck(passwordsend, lower, stop) {
          }
     } else {
         for (let x = 0 ; x < 8 ; x++) {
-            if (!isNaN(passwordsend[x])) {
+            if (!isNaN(passwordsend[x]) || symbolRegex.test(passwordsend[x])) {
                 continue; 
             } else if (passwordsend[x] === passwordsend[x].toLowerCase()) {
                 console.log(passwordsend[x] + x)
@@ -64,6 +66,8 @@ function lowercasecheck(passwordsend, lower, stop) {
 
 
 function uppercasecheck(passwordsend, upper, stop) {
+    const symbolRegex = new RegExp(
+        '^(?=.*[!@#$%^&*"\\[\\]\\{\\}<>/\\(\\)=\\\\\\-_´+`~\\:;,\\.€\\|])',)
     if (stop){
         for (let i = 0; i < 8; i++) {
             if (passwordsend[i] === passwordsend[i].toLowerCase()) {
@@ -75,7 +79,7 @@ function uppercasecheck(passwordsend, upper, stop) {
          }
     } else {
         for (let x = 0; x < 8; x++) {
-            if (!isNaN(passwordsend[x])) {
+            if (!isNaN(passwordsend[x]) || symbolRegex.test(passwordsend[x])) {
                 continue; 
             } else if (passwordsend[x] === passwordsend[x].toUpperCase()) {
                 console.log(passwordsend[x] + x);
@@ -209,6 +213,7 @@ router.post('/:rank',(req,res) => {
         sym = symbolcheck(passwordsend,sym);
         if (num && upper && lower && sym) {
             status = true;
+            notification = "เก่งมาก คุณผ่านหมดทุกRankแล้ว"
         } else if (!num && !upper && !lower) {
             status = true;
             notification = "กรุณาใส่ตัวเลข ตัวอักษรพิมพ์ใหญ่ และตัวอักษรพิมพ์เล็ก Rank Professional"
@@ -223,10 +228,10 @@ router.post('/:rank',(req,res) => {
             notification = "กรุณาใส่ตัวเลข สัญญาลักษณ์ และตัวอักษรพิมพ์ใหญ่ Rank Professional"
         }else if (!num && !lower) {
             status = true;
-            notification = "กรุณาใส่สัญญาลักษณ์ และตัวอักษรพิมพ์เล็ก Rank Professional"
+            notification = "กรุณาใส่ตัวเลข และตัวอักษรพิมพ์เล็ก Rank Professional"
         } else if (!num && !upper) {
             status = true;
-            notification = "กรุณาใส่สัญญาลักษณ์ และตัวอักษรพิมพ์ใหญ่ Rank Professional"
+            notification = "กรุณาใส่ตัวเลข และตัวอักษรพิมพ์ใหญ่ Rank Professional"
         } else if (!num && !sym) {
             status = true;
             notification = "กรุณาใส่สัญญาลักษณ์ และตัวเลข Rank Professional"
