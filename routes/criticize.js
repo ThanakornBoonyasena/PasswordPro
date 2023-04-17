@@ -89,6 +89,19 @@ function uppercasecheck(passwordsend, upper, stop) {
     return upper;
 }
 
+function symbolcheck(passwordsend,sym) {
+    const symbolPattern = /[^\w\s]/;
+    for (let i = 0; i < 8; i++) {
+        if (symbolPattern.test(passwordsend)) {
+            sym = true;
+            break
+        } else {
+            sym = false;
+        }
+    }
+    return sym;
+}
+
 router.post('/:rank',(req,res) => {
     const rank = req.params.rank;
     let passwordsend = req.body.password
@@ -188,8 +201,19 @@ router.post('/:rank',(req,res) => {
             }
     }
 
-    console.log("lower" + lower);
-    console.log("upper" + upper);
+    if (rank == "professional") {
+        sym = symbolcheck(passwordsend,sym);
+        if (sym) {
+            status = true;
+        } else {
+            status = false;
+            notification ="กรุณาใส่สัญญาลักษณ์ใน RanK Professional"
+        }
+    }
+
+    console.log("lower" + " " + lower);
+    console.log("upper" + " " + upper);
+    console.log("sym" + " " + sym);
     console.log(notification);
     const nextrank = nextroute[rank]
     console.log(nextrank)
