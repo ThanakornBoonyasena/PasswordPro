@@ -43,6 +43,16 @@ footer  {
     margin: 3rem;
 }
 
+#news,#passwordpro,#play {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50vmin;
+    height: 60vmin; 
+    background-color: #111311;
+    border-radius: 10%;
+    margin: 3rem;
+}
 
 .headertxt {
     color: #12ff49;
@@ -51,28 +61,37 @@ footer  {
     font-size: 2vmax;
 }
 
+#headertxt {
+    color: #12ff49;
+    font-size: 2vmax;
+}
+
 .article {
     color: #ffff;
     margin: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.5rem;  
+    text-align: center;
+}
+
+#play > img {
+    position: relative;
+    top: 5%;
+}
+
+.logo{
+    width:  15vw;
+    height: 40vh;
 }
 
 
 #logo {
-    width: 30vmin;
-    height: 30vmin;
-    border-radius:  50%;
+    width:  45vmin;
+    height: 8vmin;
 }
 
 a {
     text-decoration: none;
 }
-
-
-
-
-
-
 
 
 
